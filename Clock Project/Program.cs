@@ -28,6 +28,9 @@ namespace Clock_Project
             string decision = Console.ReadLine();
             bool closeApp = false;
 
+            Console.WriteLine(Console.WindowWidth);
+            Console.WriteLine(Console.WindowHeight);
+
             if (decision == "yes" || decision == "Yes")
             {
                 Console.WriteLine("Okay, how often would you like to be reminded? Please enter below in minutes: ");
@@ -50,8 +53,8 @@ namespace Clock_Project
                         endTime = startTime.AddMinutes(frequency);  
                     }
 
-                    Thread.Sleep(60 * 1000);
-                    Console.SetCursorPosition(0, Console.CursorTop - 1);
+                    Thread.Sleep(5000);
+                    Console.Clear();
 
                 }
             }
