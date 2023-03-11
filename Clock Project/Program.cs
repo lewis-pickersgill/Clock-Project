@@ -19,10 +19,11 @@ namespace Clock_Project
         public static void SpecificTimer(DateTime reminderTime)
         {
             Console.Clear();
-            Console.SetWindowSize(10, 10);
+            Console.SetWindowSize(100, 5);
+            Console.WriteLine("Your timer is set for " + reminderTime);
             while (reminderTime >= DateTime.Now)
             {
-                Thread.Sleep(15 * 1000);
+                Thread.Sleep(10 * 1000);
             }
             PopUp();
         }
