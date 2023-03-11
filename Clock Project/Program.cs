@@ -23,13 +23,12 @@ namespace Clock_Project
     {
         static void Main(string[] args)
         {
+            Console.SetWindowSize(100, 10);
+
             Console.WriteLine("Welcome to my clock application");
             Console.WriteLine("Would you like to be reminded the time periodically? Please answer yes or no: ");
             string decision = Console.ReadLine();
             bool closeApp = false;
-
-            Console.WriteLine(Console.WindowWidth);
-            Console.WriteLine(Console.WindowHeight);
 
             if (decision == "yes" || decision == "Yes")
             {
