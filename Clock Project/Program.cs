@@ -20,6 +20,12 @@ namespace Clock_Project
         {
             Console.Clear();
             Console.SetWindowSize(100, 5);
+
+            if (reminderTime < DateTime.Now)
+            {
+                reminderTime = reminderTime.AddDays(1);
+                Console.WriteLine(reminderTime);
+            }
             Console.WriteLine("Your timer is set for " + reminderTime);
             while (reminderTime >= DateTime.Now)
             {
@@ -36,6 +42,7 @@ namespace Clock_Project
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("Welcome to my clock application");
             Console.WriteLine("Please select from one of the following options:\n1. Set a reminder for a specific time\n2. Set a frequent reminder");
             Console.WriteLine("Please enter the number of the option you would like to select: ");
@@ -58,7 +65,7 @@ namespace Clock_Project
 
                 while (closeApp == false)
                 {
-                    Console.WriteLine(Time.CurrentTime());
+                    Console.WriteLine(Time.CurrentTime() + " and your next reminder is set for " + endTime.ToShortTimeString());
 
                     if (DateTime.Now >= endTime)
                     {
